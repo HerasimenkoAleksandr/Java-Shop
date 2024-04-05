@@ -27,12 +27,23 @@
                 <li><a href="<%=context%>/cart"><i class="material-icons prefix">shopping_cart</i></a></li>
                 <li><a href="badges.html">Components</a></li>
                 <li><a href="collapsible.html">JavaScript</a></li>
+
+                    <li><a href="<%=context%>/signup"><i class="material-icons">person_add</i></a></li>
+
             </ul>
         </div>
     </nav>
 </header>
 <main class="container">
-    <a href="<%=context%>/sale"><h3>Акційні товари</h3></a>
+    <div class="row">
+        <div  class="col s5" >
+        <a href="<%=context%>/sale"><h4>Акційні товари</h4></a>
+        </div>
+        <div  class="col s5" >
+            <a href="<%=context%>/product"><h4>Додати товар</h4></a>
+        </div>
+    </div>
+
     <jsp:include page="<%= bodyFile %>"/>
 </main>
 <footer class="page-footer light-blue lighten-4">
