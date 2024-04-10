@@ -7,6 +7,8 @@ import itstep.lerning.services.form.FormParseService;
 import itstep.lerning.services.form.HybridFormParser;
 import itstep.lerning.services.hash.HashService;
 import itstep.lerning.services.hash.Md5HashService;
+import itstep.lerning.services.kdf.HashKdfService;
+import itstep.lerning.services.kdf.KdfService;
 
 public class ServiceModule extends AbstractModule {
     @Override
@@ -14,5 +16,6 @@ public class ServiceModule extends AbstractModule {
         bind(HashService.class).to(Md5HashService.class);
         bind(DbService.class).to(MySqlDbService.class);
         bind(FormParseService.class).to(HybridFormParser.class);
+        bind(KdfService.class).to(HashKdfService.class);
     }
 }

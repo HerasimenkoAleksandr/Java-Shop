@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <h1>Зареєструватись на сайті</h1>
+<div class="errorDiv"></div>
 <div class="row">
     <form class="col s12" method="post">
         <div class="row">
@@ -55,3 +56,4 @@
         </div>
     </form>
 </div>
+<div class="errorDiv"></div>
