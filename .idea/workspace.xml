@@ -9,18 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e46e4060-7adb-4394-b2b7-bebac41f2e87" name="Changes" comment="second_homework">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/services/kdf/HashKdfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/avatar/7309681.jpg" afterDir="false" />
+    <list default="true" id="e46e4060-7adb-4394-b2b7-bebac41f2e87" name="Changes" comment="Third_homework">
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Java_Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/RouteModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/RouteModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/ServiceModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/ServiceModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/SignupServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,11 +103,11 @@
       <recent name="itstep.lerning.ioc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\img" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\target\Java-Shop\img" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\img\avatar" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\java\itstep\lerning\services\kdf" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\java\itstep\lerning" />
-      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="itstep.lerning.ioc" />
@@ -232,7 +229,8 @@
       <workItem from="1712383326118" duration="4064000" />
       <workItem from="1712639377991" duration="6355000" />
       <workItem from="1712725562339" duration="5126000" />
-      <workItem from="1712777880899" duration="3974000" />
+      <workItem from="1712777880899" duration="4158000" />
+      <workItem from="1713245887231" duration="18810000" />
     </task>
     <task id="LOCAL-00001" summary="first_homework">
       <option name="closed" value="true" />
@@ -266,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712298210423</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Third_homework">
+      <option name="closed" value="true" />
+      <created>1712782096386</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712782096386</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +292,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first_homework" />
     <MESSAGE value="second_homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="second_homework" />
+    <MESSAGE value="Third_homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third_homework" />
   </component>
 </project>

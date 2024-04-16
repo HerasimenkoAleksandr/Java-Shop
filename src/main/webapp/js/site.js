@@ -22,7 +22,38 @@ document.addEventListener( 'DOMContentLoaded', () => {
         "startingTop": 		'4%',	// Starting top offset
         "endingTop": 		'10%'	// Ending top offset
     });
+    checkAuth();
 });
+function checkAuth() {
+    // ... при завантаженні сторінки перевіряємо наявність даних автентифікації у localStorage
+    const authToken = localStorage.getItem("auth-token");
+    if( authToken ) {
+        // перевіряємо токен на валідність і одержуємо дані про користувача
+        fetch(`/${getContext()}/auth?token=${authToken}`, {
+            method: 'POST'
+        })
+            .then( r => r.json() )
+            .then( j => {
+                if(j.meta.status == 'success') {
+                    // замінити "кнопку" входу на аватарку користувача
+                    document.querySelector('[data-auth="avatar"]').innerHTML = `<img title="${j.data.name}" class="nav-avatar" src="/${getContext()}/img/avatar/${j.data.avatar}" />`
+                    const product = document.querySelector('[data-auth="product"]');
+                    if(product) {
+                        fetch(`/${getContext()}/product.jsp`)
+                            .then(r => r.text())
+                            .then(t => {
+                                product.innerHTML = t;
+                                document.getElementById("add-product-button")
+                                    .addEventListener('click', addProductClick);
+                            });
+                    }
+                }
+                else {
+                    document.querySelector('[data-auth="avatar"]').innerHTML =   '<a href="#auth-modal" class="modal-trigger"><i class="material-icons">key</i></a>'
+                }
+            } );
+    }
+}
 function productButtonButtonClick()
 {
 
@@ -102,6 +133,9 @@ function productButtonButtonClick()
         } ) ;
 
 }
+function getContext() {
+    return window.location.pathname.split('/')[1];
+}
 function authButtonClick(e) {
     const emailInput = document.querySelector('input[name="auth-email"]');
     if( ! emailInput ) { throw "'auth-email' not found" ; }
@@ -109,11 +143,22 @@ function authButtonClick(e) {
     if( ! passwordInput ) { throw "'auth-password' not found" ; }
 
     // console.log( emailInput.value, passwordInput.value ) ;
-    fetch(`/auth?email=${emailInput.value}&password=${passwordInput.value}`, {
-        method: 'PATCH'
+    fetch(`/${getContext()}/auth?email=${emailInput.value}&password=${passwordInput.value}`, {
+        method: 'GET'
     })
         .then( r => r.json() )
-        .then( console.log ) ;
+        .then( j => {
+            if( j.data == null || typeof j.data.token == "undefined" ) {
+                document.getElementById("modal-auth-message").innerText = "У вході відмовлено";
+            }
+            else {
+                // авторизація токенами передбачає їх збереження з метою подальшого використання
+                // Для того щоб токени були доступні після перезавантаження їх вміщують
+                // до постійного сховища браузера - localStorage ...
+                localStorage.setItem("auth-token", j.data.token);
+                window.location.reload();
+            }
+        } ) ;
 }
 
 function signupButtonClick(e) {
