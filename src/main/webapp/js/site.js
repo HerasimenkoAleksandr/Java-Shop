@@ -1,4 +1,4 @@
-document.addEventListener( 'DOMContentLoaded', () => {
+﻿document.addEventListener( 'DOMContentLoaded', () => {
     // шукаємо кнопку реєстрації, якщо знаходимо - додаємо обробник
     const signupButton = document.getElementById("signup-button");
     if(signupButton) { signupButton.onclick = signupButtonClick; }
@@ -54,6 +54,95 @@ function checkAuth() {
             } );
     }
 }
+
+function addProductClick(e) {
+    // Збираємо дані з форми додавання продукту
+    const form = e.target.closest('form');
+    const name = form.querySelector("#product-name").value.trim();
+    const price = Number(form.querySelector("#product-price").value);
+    const description = form.querySelector("#product-description").value.trim();
+    const fileInput = form.querySelector("#product-img");
+    // Проводимо валідацію
+    let valid = true;
+
+    if (name.length < 3) {
+        form.querySelector("#product-name-error").innerText = "Назва товару повинна містити принаймні 3 символів";
+        valid = false;
+    }
+    else
+    {
+        form.querySelector("#product-name-error").innerText = "";
+    }
+
+    if (price <= 0 || isNaN(price)) {
+        form.querySelector("#product-price-error").innerText = "Ціна товару повинна бути додатнім числом";
+        valid = false;
+    }
+    else
+    {
+        form.querySelector("#product-price-error").innerText = "";
+    }
+
+
+    if (description.length > 20) {
+        form.querySelector("#product-description-error").innerText = "Опис товару не повинен містити більше 20 символів";
+        valid = false;
+    }
+    else
+    {
+        form.querySelector("#product-description-error").innerText = "";
+    }
+
+    // Проверка на допустимые разрешения для изображения
+    if (fileInput.files.length > 0) {
+        const dotPosition = fileInput.value.lastIndexOf('.');
+        const ext = fileInput.value.substring(dotPosition).toLowerCase();
+        const allowedExtensions = [".jpg", ".jpeg", ".png"];
+
+        if (!allowedExtensions.includes(ext)) {
+            const imgErrorSpan = form.querySelector("#product-img-error");
+            if (imgErrorSpan) {
+                imgErrorSpan.innerText = "Дозволені розширення зображення - .jpg, .jpeg, .png";
+            }
+            valid = false;
+        }
+        else
+        {
+            form.querySelector("#product-img-error").innerText = "";
+        }
+    } else {
+        const imgErrorSpan = form.querySelector("#product-img-error");
+        if (imgErrorSpan) {
+            imgErrorSpan.innerText = "Файл зображення не обрано";
+        }
+        valid = false;
+    }
+
+    const token = localStorage.getItem("auth-token");
+    if(token == null) {
+        const tokenErrorDiv = document.getElementById('token-error');
+        if(tokenErrorDiv) {
+            tokenErrorDiv.innerText = 'Error 401/403';
+        }
+        valid = false;
+    }
+
+    // Формуємо дані для передачі на сервер
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("description", description);
+    formData.append("image", fileInput.files[0]);
+    formData.append("token", localStorage.getItem("auth-token"));
+    // надсилаємо дані
+    fetch(`/${getContext()}/shop-api`, {
+        method: 'POST',
+        body: formData
+    })
+        .then( r => r.json() )
+        .then( console.log );
+}
+
 function productButtonButtonClick()
 {
 

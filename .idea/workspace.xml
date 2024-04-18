@@ -9,15 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e46e4060-7adb-4394-b2b7-bebac41f2e87" name="Changes" comment="Third_homework">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/AuthServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Java_Logo.png" afterDir="false" />
+    <list default="true" id="e46e4060-7adb-4394-b2b7-bebac41f2e87" name="Changes" comment="Fourth_homework">
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/ProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/filters/CharsetFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/ShopApiServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/servlets/ShopServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shop.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/products/no-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6d62f24b-114d-4a1f-b9bd-f28481cbd4e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6d62f24b-114d-4a1f-b9bd-f28481cbd4e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/dal/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/RouteModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/lerning/ioc/RouteModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,39 +78,44 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 8.5.99.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 8.5.99.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Gerasimenko/source/repos/Java-Shop/src/main/webapp/img/products",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="itstep.lerning.ioc" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\img\products" />
+      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\img" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\target\Java-Shop\img" />
       <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\webapp\img\avatar" />
-      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\java\itstep\lerning\services\kdf" />
-      <recent name="C:\Users\Gerasimenko\source\repos\Java-Shop\src\main\java\itstep\lerning" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="itstep.lerning.ioc" />
@@ -230,7 +238,9 @@
       <workItem from="1712639377991" duration="6355000" />
       <workItem from="1712725562339" duration="5126000" />
       <workItem from="1712777880899" duration="4158000" />
-      <workItem from="1713245887231" duration="18810000" />
+      <workItem from="1713245887231" duration="19721000" />
+      <workItem from="1713334740739" duration="10447000" />
+      <workItem from="1713393701460" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="first_homework">
       <option name="closed" value="true" />
@@ -272,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712782096386</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fourth_homework">
+      <option name="closed" value="true" />
+      <created>1713307738262</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713307738262</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fourth_homework">
+      <option name="closed" value="true" />
+      <created>1713307759311</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713307759311</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +319,7 @@
     <MESSAGE value="first_homework" />
     <MESSAGE value="second_homework" />
     <MESSAGE value="Third_homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third_homework" />
+    <MESSAGE value="Fourth_homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth_homework" />
   </component>
 </project>
