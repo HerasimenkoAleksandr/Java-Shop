@@ -93,7 +93,7 @@ function addProductClick(e) {
         form.querySelector("#product-description-error").innerText = "";
     }
 
-    // Проверка на допустимые разрешения для изображения
+
     if (fileInput.files.length > 0) {
         const dotPosition = fileInput.value.lastIndexOf('.');
         const ext = fileInput.value.substring(dotPosition).toLowerCase();
