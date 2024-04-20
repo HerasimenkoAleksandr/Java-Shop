@@ -23,7 +23,27 @@
         "endingTop": 		'10%'	// Ending top offset
     });
     checkAuth();
+
 });
+function serveCartButtons() {
+    // шукаємо id користувача (з його аватарки)
+    const userId = document.querySelector('[data-user-id]').getAttribute('data-user-id');
+    // шукаємо всі кнопки "додати до кошику" за ознакою data-product="..."
+    for( let btn of document.querySelectorAll('[data-product]') ) {
+        btn.onclick = () => {
+            // вилучаємо id з атрибута
+            let productId = btn.getAttribute('data-product');
+            // при натисненні надсилаємо запит до API
+            fetch(`/${getContext()}/shop-api?user-id=${userId}&product-id=${productId}`, {
+                method: 'PUT'
+            }).then(r => r.json()).then(console.log);
+
+        }
+    }
+
+
+
+}
 function checkAuth() {
     // ... при завантаженні сторінки перевіряємо наявність даних автентифікації у localStorage
     const authToken = localStorage.getItem("auth-token");
@@ -36,7 +56,7 @@ function checkAuth() {
             .then( j => {
                 if(j.meta.status == 'success') {
                     // замінити "кнопку" входу на аватарку користувача
-                    document.querySelector('[data-auth="avatar"]').innerHTML = `<img title="${j.data.name}" class="nav-avatar" src="/${getContext()}/img/avatar/${j.data.avatar}" />`
+                    document.querySelector('[data-auth="avatar"]').innerHTML = `<img data-user-id="${j.data.id}" title="${j.data.name}" class="nav-avatar" src="/${getContext()}/img/avatar/${j.data.avatar}" />`
                     const product = document.querySelector('[data-auth="product"]');
                     if(product) {
                         fetch(`/${getContext()}/product.jsp`)
@@ -47,6 +67,7 @@ function checkAuth() {
                                     .addEventListener('click', addProductClick);
                             });
                     }
+                    serveCartButtons();
                 }
                 else {
                     document.querySelector('[data-auth="avatar"]').innerHTML =   '<a href="#auth-modal" class="modal-trigger"><i class="material-icons">key</i></a>'

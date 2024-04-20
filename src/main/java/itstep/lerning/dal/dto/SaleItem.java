@@ -4,16 +4,16 @@ import java.util.UUID;
 
 public class SaleItem {
     private UUID id;
-    private CartItem cart;
+    private UUID productId;
     private int sale;
 
     public SaleItem(){
 
     }
 
-    public SaleItem(UUID id,CartItem cart, int sale ){
+    public SaleItem(UUID id,UUID productId, int sale ){
         this.id = id;
-        this.cart = cart ;
+        this.productId = productId ;
         this.sale =sale;
     }
 
@@ -25,12 +25,12 @@ public class SaleItem {
         this.id = id;
     }
 
-    public CartItem getCart() {
-        return cart;
+    public UUID getProductId() {
+        return productId;
     }
 
-    public void setCart(CartItem cart) {
-        this.cart = cart;
+    public void setProductId(UUID productId) {
+        this.productId = productId;
     }
 
     public int getSale() {

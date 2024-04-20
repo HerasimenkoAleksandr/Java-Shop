@@ -10,3 +10,10 @@
     border-radius: 50%;
     margin: 10px 0;
 }
+.product-cart-btn {
+    bottom: 7px !important;
+    right: 7px !important;
+}
+.card.small {
+    height: 400px;
+}

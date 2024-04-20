@@ -932,131 +932,193 @@ java_shop|schema||user_shop|localhost|UPDATE|G</Grants>
     </schema>
     <schema id="290" parent="1" name="java_shop">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-04-17.22:24:17</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-04-19.22:18:52</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="291" parent="1" name="user_shop">
       <Host>localhost</Host>
     </user>
-    <table id="292" parent="290" name="products">
+    <table id="292" parent="290" name="carts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="293" parent="290" name="tokens">
+    <table id="293" parent="290" name="carts_details">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="294" parent="290" name="users">
+    <table id="294" parent="290" name="products">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="295" parent="292" name="product_id">
+    <table id="295" parent="290" name="tokens">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="296" parent="290" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="297" parent="292" name="cart_id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="296" parent="292" name="product_name">
+    <column id="298" parent="292" name="cart_user">
+      <DasType>char(36)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="299" parent="292" name="cart_date">
+      <DasType>datetime|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="300" parent="292" name="cart_status">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="301" parent="292" name="PRIMARY">
+      <ColNames>cart_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="302" parent="292" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="303" parent="293" name="cart_dt_id">
+      <DasType>char(36)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="304" parent="293" name="cart_id">
+      <DasType>char(36)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="305" parent="293" name="product_id">
+      <DasType>char(36)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="306" parent="293" name="cart_dt_cnt">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="307" parent="293" name="PRIMARY">
+      <ColNames>cart_dt_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="308" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="309" parent="294" name="product_id">
+      <DasType>char(36)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="310" parent="294" name="product_name">
       <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="297" parent="292" name="product_price">
+    <column id="311" parent="294" name="product_price">
       <DasType>float|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="298" parent="292" name="product_description">
+    <column id="312" parent="294" name="product_description">
       <DasType>text|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="299" parent="292" name="product_image">
+    <column id="313" parent="294" name="product_image">
       <DasType>varchar(256)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="300" parent="292" name="PRIMARY">
+    <index id="314" parent="294" name="PRIMARY">
       <ColNames>product_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="301" parent="292" name="PRIMARY">
+    <key id="315" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="302" parent="293" name="token_id">
+    <column id="316" parent="295" name="token_id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="303" parent="293" name="user_id">
+    <column id="317" parent="295" name="user_id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="304" parent="293" name="token_created">
+    <column id="318" parent="295" name="token_created">
       <DasType>datetime|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>3</Position>
     </column>
-    <column id="305" parent="293" name="token_expires">
+    <column id="319" parent="295" name="token_expires">
       <DasType>datetime|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="306" parent="293" name="PRIMARY">
+    <index id="320" parent="295" name="PRIMARY">
       <ColNames>token_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="307" parent="293" name="PRIMARY">
+    <key id="321" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="308" parent="294" name="user_id">
+    <column id="322" parent="296" name="user_id">
       <DasType>char(36)|0s</DasType>
       <DefaultExpression>(uuid())</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="309" parent="294" name="user_name">
+    <column id="323" parent="296" name="user_name">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="310" parent="294" name="user_email">
+    <column id="324" parent="296" name="user_email">
       <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="311" parent="294" name="user_avatar">
+    <column id="325" parent="296" name="user_avatar">
       <DasType>varchar(64)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="312" parent="294" name="user_salt">
+    <column id="326" parent="296" name="user_salt">
       <DasType>char(32)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="313" parent="294" name="user_dk">
+    <column id="327" parent="296" name="user_dk">
       <DasType>char(32)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="314" parent="294" name="user_created">
+    <column id="328" parent="296" name="user_created">
       <DasType>datetime|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="315" parent="294" name="user_deleted">
+    <column id="329" parent="296" name="user_deleted">
       <DasType>datetime|0s</DasType>
       <Position>8</Position>
     </column>
-    <index id="316" parent="294" name="PRIMARY">
+    <index id="330" parent="296" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="317" parent="294" name="PRIMARY">
+    <key id="331" parent="296" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

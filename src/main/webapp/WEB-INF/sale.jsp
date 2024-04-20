@@ -16,8 +16,8 @@
         </div>
         <div class="card-stacked flex3">
             <div class="card-content">
-                <p><%= item.getCart().getProductId() %></p>
-                <p><%= item.getCart().getCount() %></p>
+                <p><%= item.getProductId() %></p>
+                <p><%= item.getSale() %></p>
             </div>
             <div class="card-content">
                 <h3>Знижка на <%= item.getSale() %>%  </h3>

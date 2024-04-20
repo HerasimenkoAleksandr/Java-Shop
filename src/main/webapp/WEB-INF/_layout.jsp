@@ -33,13 +33,14 @@
         </div>
     </nav>
 </header>
-<main class="container">
+<main class="<%=request.getAttribute("skip-container") == null ? "container" : ""%>">
+
     <div class="row">
         <div  class="col s5" >
         <a href="<%=context%>/sale"><h4>Акційні товари</h4></a>
         </div>
         <div  class="col s5" >
-            <a href="<%=context%>/product"><h4>Додати товар</h4></a>
+            <a href="<%=context%>/shop"><h4>Додати товар</h4></a>
         </div>
     </div>
 

@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import itstep.lerning.dal.dao.CartDao;
 import itstep.lerning.dal.dao.ProductDao;
 import itstep.lerning.dal.dto.Product;
 import itstep.lerning.dal.dto.User;
@@ -26,11 +27,21 @@ import java.util.UUID;
 public class ShopApiServlet extends HttpServlet {
     private final FormParseService formParseService;
     private final ProductDao productDao;
+    private final CartDao cartDao;
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String userId = req.getParameter("user-id");
+        String productId = req.getParameter("product-id");
+        cartDao.add(userId, productId, 1);
+        sendRest(resp, "success", "Cart item added", null);
+    }
 
     @Inject
-    public ShopApiServlet(FormParseService formParseService, ProductDao productDao) {
+    public ShopApiServlet(FormParseService formParseService, ProductDao productDao, CartDao cartDao) {
         this.formParseService = formParseService;
         this.productDao = productDao;
+        this.cartDao = cartDao;
     }
 
     @Override

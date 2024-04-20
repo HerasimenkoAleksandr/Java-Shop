@@ -7,12 +7,11 @@ import java.util.UUID;
 
 public class SaleDao {
 
-    CartDao carts = new CartDao();
-    public SaleItem[] getSale() {
-        SaleItem[] saleItems = new SaleItem[2];
-        for (int i = 0; i < 2; i++) {
-            saleItems[i] = new SaleItem(UUID.randomUUID(), carts.getCart()[i], 15 + i);
-        }
-        return saleItems;
+       public SaleItem[] getSale() {
+        return new SaleItem[] {
+                new SaleItem(UUID.randomUUID(), UUID.randomUUID(), 1),
+                new SaleItem(UUID.randomUUID(), UUID.randomUUID(), 2),
+                new SaleItem(UUID.randomUUID(), UUID.randomUUID(), 3),
+        };
     }
 }
